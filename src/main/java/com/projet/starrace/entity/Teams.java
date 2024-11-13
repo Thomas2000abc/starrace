@@ -15,8 +15,11 @@ public class Teams {
     @Column(name="team_logo")
     private String teamLogo;
     private boolean validity;
+
+    @ManyToOne
+    @JoinColumn(name="id_account")
     @Column(name="account_id")
-    private int accountId;
+    private Account accountId;
     private int order;
 
     public int getIdTeam() {
@@ -51,11 +54,11 @@ public class Teams {
         this.validity = validity;
     }
 
-    public int getAccountId() {
+    public Account getAccountId() {
         return accountId;
     }
 
-    public void setAccountId(int accountId) {
+    public void setAccountId(Account accountId) {
         this.accountId = accountId;
     }
 

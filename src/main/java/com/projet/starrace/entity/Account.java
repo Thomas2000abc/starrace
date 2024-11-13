@@ -2,6 +2,8 @@ package com.projet.starrace.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "account")
 public class Account {
@@ -22,6 +24,9 @@ public class Account {
     private String password;
     @Column(name = "sign_in_date")
     private String signInDate;
+
+    @OneToMany(mappedBy = "accountId")
+    private List<Teams> teams;
 
     public String getFirstName() {
         return firstName;
