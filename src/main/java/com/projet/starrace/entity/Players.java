@@ -8,6 +8,7 @@ import jakarta.persistence.*;
 public class Players {
     @Id
     @GeneratedValue
+    @Column(name = "id_players")
     private int id;
 
     @Column(name = "player_first_name")
@@ -27,7 +28,6 @@ public class Players {
 
     @ManyToOne
     @JoinColumn(name = "team_id")
-    @Column(name = "team_id")
     private Teams team;
 
     public Players(String firstName, String lastName, String image, Rarity rarity, Position position) {

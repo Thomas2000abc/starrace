@@ -1,17 +1,17 @@
 package com.projet.starrace.entity;
 
 import com.projet.starrace.enumeration.TournamentType;
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+import java.util.List;
+
+@Entity
 public class Tournaments {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_tournaments")
-    private int idTournaments;
+    private int id;
     @Column(name="tournament_name")
     private String tournamentName;
     @Column(name="tournament_type")
@@ -21,12 +21,18 @@ public class Tournaments {
     @Column(name="tournament_description")
     private String tournamentDescription;
 
-    public int getIdTournaments() {
-        return idTournaments;
+
+    @OneToMany(mappedBy = "tournamentId")
+    private List<Participation> participations;
+    @OneToMany(mappedBy = "tournamentId")
+    private List<Match> matches;
+
+    public int getId() {
+        return id;
     }
 
-    public void setIdTournaments(int idTournaments) {
-        this.idTournaments = idTournaments;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTournamentName() {
