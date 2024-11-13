@@ -5,9 +5,11 @@ import com.projet.starrace.enumeration.Rarity;
 import jakarta.persistence.*;
 import org.hibernate.type.descriptor.jdbc.TinyIntJdbcType;
 
+@Entity
 public class Participation {
     @Id
     @GeneratedValue
+    @Column(name = "id_participation")
     private int id;
 
     @Column(name = "validity")
@@ -16,12 +18,10 @@ public class Participation {
 
     @ManyToOne
     @JoinColumn(name = "tournament_id")
-    @Column(name = "tournament_id")
-    private Tournaments tournament;
+    private Tournaments tournamentId;
 
     @ManyToOne
     @JoinColumn(name = "teams_id")
-    @Column(name = "teams_id")
     private Teams team;
 
     public Participation(int validity) {
@@ -37,11 +37,11 @@ public class Participation {
     }
 
     public Tournaments getTournament() {
-        return tournament;
+        return tournamentId;
     }
 
     public void setTournament(Tournaments tournament) {
-        this.tournament = tournament;
+        this.tournamentId = tournament;
     }
 
     public Teams getTeam() {

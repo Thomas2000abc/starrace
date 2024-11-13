@@ -2,6 +2,8 @@ package com.projet.starrace.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name="teams")
 public class Teams {
@@ -9,7 +11,7 @@ public class Teams {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_team")
-    private int idTeam;
+    private int id;
     @Column(name="team_name")
     private String teamName;
     @Column(name="team_logo")
@@ -18,16 +20,28 @@ public class Teams {
 
     @ManyToOne
     @JoinColumn(name="id_account")
-    @Column(name="account_id")
     private Account accountId;
     private int order;
 
-    public int getIdTeam() {
-        return idTeam;
+    @OneToMany(mappedBy = "team")
+    private List<Participation> participations;
+
+    @OneToMany(mappedBy = "team")
+    private List<Players> players;
+
+    @OneToMany(mappedBy = "homeTeam")
+    private List<Match> homeTeams;
+
+    @OneToMany(mappedBy = "awayTeam")
+    private List<Match> awayTeams;
+
+
+    public int getId() {
+        return id;
     }
 
-    public void setIdTeam(int idTeam) {
-        this.idTeam = idTeam;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTeamName() {

@@ -8,47 +8,35 @@ public class Match {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_match")
-    private int idMatch;
-    @Column(name = "home_team_id")
-    private int homeTeamId;
-    @Column(name = "away_team_id")
-    private int awayTeamId;
-    @Column(name = "tournament_id")
-    private int tournamentId;
+    private int id;
+    @ManyToOne
+    @JoinColumn(name = "home_team_id")
+    private Teams homeTeam;
+    @ManyToOne
+    @JoinColumn(name = "away_team_id")
+    private Teams awayTeam;
+    @ManyToOne
+    @JoinColumn(name = "tournament_id")
+    private Tournaments tournamentId;
     @Column(name = "home_goals")
     private int homeGoals;
     @Column(name = "away_goals")
     private int awayGoals;
 
-    public int getIdMatch() {
-        return idMatch;
+    public int getId() {
+        return id;
     }
 
-    public void setIdMatch(int idMatch) {
-        this.idMatch = idMatch;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public int getHomeTeamId() {
-        return homeTeamId;
-    }
 
-    public void setHomeTeamId(int homeTeamId) {
-        this.homeTeamId = homeTeamId;
-    }
-
-    public int getAwayTeamId() {
-        return awayTeamId;
-    }
-
-    public void setAwayTeamId(int awayTeamId) {
-        this.awayTeamId = awayTeamId;
-    }
-
-    public int getTournamentId() {
+    public Tournaments getTournamentId() {
         return tournamentId;
     }
 
-    public void setTournamentId(int tournamentId) {
+    public void setTournamentId(Tournaments tournamentId) {
         this.tournamentId = tournamentId;
     }
 
