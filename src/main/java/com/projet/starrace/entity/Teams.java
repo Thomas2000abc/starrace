@@ -17,12 +17,15 @@ public class Teams {
     @Column(name="team_logo")
     private String teamLogo;
     private boolean validity;
-
-    @ManyToOne
-    @JoinColumn(name="id_account")
-    private Account accountId;
     private int order;
 
+    /*
+    @ManyToOne
+    @JoinColumn(name="account_id")
+    private Account accountId;
+*/
+    @Column(name="account_id")
+    private int accountId;
     @OneToMany(mappedBy = "team")
     private List<Participation> participations;
 
@@ -68,11 +71,11 @@ public class Teams {
         this.validity = validity;
     }
 
-    public Account getAccountId() {
+    public int getAccountId() {
         return accountId;
     }
 
-    public void setAccountId(Account accountId) {
+    public void setAccountId(int accountId) {
         this.accountId = accountId;
     }
 
