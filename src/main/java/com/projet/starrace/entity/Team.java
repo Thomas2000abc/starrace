@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name="teams")
-public class Teams {
+public class Team {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +27,7 @@ public class Teams {
     private List<Participation> participations;
 
     @OneToMany(mappedBy = "team")
-    private List<Players> players;
+    private List<Player> players;
 
     @OneToMany(mappedBy = "homeTeam")
     private List<Match> homeTeams;

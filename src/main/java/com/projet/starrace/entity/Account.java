@@ -26,7 +26,7 @@ public class Account {
     @Column(name = "sign_in_date")
     private String signInDate;
     @OneToMany(mappedBy = "account")
-    private List<Teams> teams;
+    private List<Team> teams;
 
     public int getId() {
         return id;
