@@ -19,13 +19,10 @@ public class Teams {
     private boolean validity;
     private int order;
 
-    /*
     @ManyToOne
     @JoinColumn(name="account_id")
     private Account accountId;
-*/
-    @Column(name="account_id")
-    private int accountId;
+
     @OneToMany(mappedBy = "team")
     private List<Participation> participations;
 
@@ -71,11 +68,11 @@ public class Teams {
         this.validity = validity;
     }
 
-    public int getAccountId() {
+    public Account getAccountId() {
         return accountId;
     }
 
-    public void setAccountId(int accountId) {
+    public void setAccountId(Account accountId) {
         this.accountId = accountId;
     }
 
