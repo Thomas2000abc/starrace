@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name="teams")
-public class Teams {
+public class Team {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,14 +20,14 @@ public class Teams {
 
     @ManyToOne
     @JoinColumn(name="id_account")
-    private Account accountId;
+    private Account account;
     private int order;
 
     @OneToMany(mappedBy = "team")
     private List<Participation> participations;
 
     @OneToMany(mappedBy = "team")
-    private List<Players> players;
+    private List<Player> players;
 
     @OneToMany(mappedBy = "homeTeam")
     private List<Match> homeTeams;
@@ -68,12 +68,12 @@ public class Teams {
         this.validity = validity;
     }
 
-    public Account getAccountId() {
-        return accountId;
+    public Account getAccount() {
+        return account;
     }
 
-    public void setAccountId(Account accountId) {
-        this.accountId = accountId;
+    public void setAccountId(Account account) {
+        this.account = account;
     }
 
     public int getOrder() {

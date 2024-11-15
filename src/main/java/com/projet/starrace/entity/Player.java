@@ -5,7 +5,8 @@ import com.projet.starrace.enumeration.Rarity;
 import jakarta.persistence.*;
 
 @Entity
-public class Players {
+@Table(name = "players")
+public class Player {
     @Id
     @GeneratedValue
     @Column(name = "id_players")
@@ -28,9 +29,9 @@ public class Players {
 
     @ManyToOne
     @JoinColumn(name = "team_id")
-    private Teams team;
+    private Team team;
 
-    public Players(String firstName, String lastName, String image, Rarity rarity, Position position) {
+    public Player(String firstName, String lastName, String image, Rarity rarity, Position position) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.image = image;
@@ -78,11 +79,11 @@ public class Players {
         this.position = position;
     }
 
-    public Teams getTeam() {
+    public Team getTeam() {
         return team;
     }
 
-    public void setTeam(Teams team) {
+    public void setTeam(Team team) {
         this.team = team;
     }
 }

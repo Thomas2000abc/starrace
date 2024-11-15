@@ -1,9 +1,6 @@
 package com.projet.starrace.entity;
 
-import com.projet.starrace.enumeration.Position;
-import com.projet.starrace.enumeration.Rarity;
 import jakarta.persistence.*;
-import org.hibernate.type.descriptor.jdbc.TinyIntJdbcType;
 
 @Entity
 public class Participation {
@@ -15,14 +12,13 @@ public class Participation {
     @Column(name = "validity")
     private int validity;
 
-
     @ManyToOne
     @JoinColumn(name = "tournament_id")
-    private Tournaments tournamentId;
+    private Tournament tournament;
 
     @ManyToOne
     @JoinColumn(name = "teams_id")
-    private Teams team;
+    private Team team;
 
     public Participation(int validity) {
         this.validity = validity;
@@ -36,19 +32,19 @@ public class Participation {
         this.validity = validity;
     }
 
-    public Tournaments getTournament() {
-        return tournamentId;
+    public Tournament getTournament() {
+        return tournament;
     }
 
-    public void setTournament(Tournaments tournament) {
-        this.tournamentId = tournament;
+    public void setTournament(Tournament tournament) {
+        this.tournament = tournament;
     }
 
-    public Teams getTeam() {
+    public Team getTeam() {
         return team;
     }
 
-    public void setTeam(Teams team) {
+    public void setTeam(Team team) {
         this.team = team;
     }
 }

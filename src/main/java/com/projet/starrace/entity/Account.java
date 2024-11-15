@@ -17,6 +17,7 @@ public class Account {
     private String lastName;
     @Column(name = "discord_pseudo")
     private String discordPseudo;
+    @Column(name = "birth_date")
     private String birthDate;
     private String nationality;
     private String synopsis;
@@ -24,9 +25,8 @@ public class Account {
     private String password;
     @Column(name = "sign_in_date")
     private String signInDate;
-
-    @OneToMany(mappedBy = "accountId")
-    private List<Teams> teams;
+    @OneToMany(mappedBy = "account")
+    private List<Team> teams;
 
     public int getId() {
         return id;
