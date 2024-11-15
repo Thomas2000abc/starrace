@@ -15,10 +15,9 @@ public class Participation {
     @Column(name = "validity")
     private int validity;
 
-
     @ManyToOne
     @JoinColumn(name = "tournament_id")
-    private Tournaments tournamentId;
+    private Tournaments tournament;
 
     @ManyToOne
     @JoinColumn(name = "teams_id")
@@ -37,11 +36,11 @@ public class Participation {
     }
 
     public Tournaments getTournament() {
-        return tournamentId;
+        return tournament;
     }
 
     public void setTournament(Tournaments tournament) {
-        this.tournamentId = tournament;
+        this.tournament = tournament;
     }
 
     public Teams getTeam() {

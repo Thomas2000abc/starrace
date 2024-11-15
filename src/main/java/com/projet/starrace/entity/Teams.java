@@ -20,7 +20,7 @@ public class Teams {
 
     @ManyToOne
     @JoinColumn(name="id_account")
-    private Account accountId;
+    private Account account;
     private int order;
 
     @OneToMany(mappedBy = "team")
@@ -68,12 +68,12 @@ public class Teams {
         this.validity = validity;
     }
 
-    public Account getAccountId() {
-        return accountId;
+    public Account getAccount() {
+        return account;
     }
 
-    public void setAccountId(Account accountId) {
-        this.accountId = accountId;
+    public void setAccountId(Account account) {
+        this.account = account;
     }
 
     public int getOrder() {

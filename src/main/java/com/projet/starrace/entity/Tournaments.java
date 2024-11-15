@@ -20,11 +20,9 @@ public class Tournaments {
     private int tournamentCode;
     @Column(name="tournament_description")
     private String tournamentDescription;
-
-
-    @OneToMany(mappedBy = "tournamentId")
+    @OneToMany(mappedBy = "tournament")
     private List<Participation> participations;
-    @OneToMany(mappedBy = "tournamentId")
+    @OneToMany(mappedBy = "tournament")
     private List<Match> matches;
 
     public int getId() {

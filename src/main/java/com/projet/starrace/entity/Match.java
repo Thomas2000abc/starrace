@@ -9,6 +9,10 @@ public class Match {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_match")
     private int id;
+    @Column(name = "home_goals")
+    private int homeGoals;
+    @Column(name = "away_goals")
+    private int awayGoals;
     @ManyToOne
     @JoinColumn(name = "home_team_id")
     private Teams homeTeam;
@@ -17,11 +21,7 @@ public class Match {
     private Teams awayTeam;
     @ManyToOne
     @JoinColumn(name = "tournament_id")
-    private Tournaments tournamentId;
-    @Column(name = "home_goals")
-    private int homeGoals;
-    @Column(name = "away_goals")
-    private int awayGoals;
+    private Tournaments tournament;
 
     public int getId() {
         return id;
@@ -32,12 +32,12 @@ public class Match {
     }
 
 
-    public Tournaments getTournamentId() {
-        return tournamentId;
+    public Tournaments getTournament() {
+        return tournament;
     }
 
-    public void setTournamentId(Tournaments tournamentId) {
-        this.tournamentId = tournamentId;
+    public void setTournament(Tournaments tournament) {
+        this.tournament = tournament;
     }
 
     public int getHomeGoals() {
