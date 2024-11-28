@@ -17,6 +17,7 @@ public class Account {
     private String lastName;
     @Column(name = "discord_pseudo")
     private String discordPseudo;
+    @Column(name = "birthdate")
     private String birthDate;
     private String nationality;
     private String synopsis;

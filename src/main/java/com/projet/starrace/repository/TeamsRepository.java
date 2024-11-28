@@ -8,7 +8,4 @@ import java.util.List;
 
 @Repository
 public interface TeamsRepository extends JpaRepository<Teams, Integer> {
-
-    public Teams findById(int id);
-
 }

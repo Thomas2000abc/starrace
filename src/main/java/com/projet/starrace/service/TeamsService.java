@@ -8,17 +8,4 @@ import java.util.List;
 
 @Service
 public class TeamsService {
-    private TeamsRepository teamsRepository;
-
-    public TeamsService(TeamsRepository teamsRepository) {
-        this.teamsRepository = teamsRepository;
-    }
-
-    public List<Teams> getAll() {
-        return teamsRepository.findAll();
-    }
-
-    public Teams getById(int id) {
-        return teamsRepository.findById(id);
-    }
 }
