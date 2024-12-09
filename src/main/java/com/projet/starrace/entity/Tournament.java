@@ -34,6 +34,22 @@ public class Tournament {
         this.id = id;
     }
 
+    public List<Participation> getParticipations() {
+        return participations;
+    }
+
+    public void setParticipations(List<Participation> participations) {
+        this.participations = participations;
+    }
+
+    public List<Match> getMatches() {
+        return matches;
+    }
+
+    public void setMatches(List<Match> matches) {
+        this.matches = matches;
+    }
+
     public String getTournamentName() {
         return tournamentName;
     }

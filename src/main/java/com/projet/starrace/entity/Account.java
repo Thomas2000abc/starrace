@@ -1,5 +1,6 @@
 package com.projet.starrace.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public class Account {
     private String lastName;
     @Column(name = "discord_pseudo")
     private String discordPseudo;
-    @Column(name = "birth_date")
+    @Column(name = "birthdate")
     private String birthDate;
     private String nationality;
     private String synopsis;
@@ -34,6 +35,10 @@ public class Account {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void setTeams(List<Team> teams) {
+        this.teams = teams;
     }
 
     public String getFirstName() {
