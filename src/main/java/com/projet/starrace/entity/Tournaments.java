@@ -14,6 +14,7 @@ public class Tournaments {
     private int id;
     @Column(name="tournament_name")
     private String tournamentName;
+    @Enumerated(EnumType.STRING)
     @Column(name="tournament_type")
     private TournamentType tournamentType;
     @Column(name="tournament_code")

@@ -4,7 +4,6 @@ public enum TournamentType {
     Championnat,
     CAIL,
     WAC,
-    Draft,
     Amicaux,
     PlayOff
 
