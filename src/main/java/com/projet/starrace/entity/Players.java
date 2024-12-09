@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "players")
-public class Player {
+public class Players {
     @Id
     @GeneratedValue
     @Column(name = "id_players")
@@ -22,21 +22,25 @@ public class Player {
     private String image;
 
     @Column(name = "rarity")
-    private Rarity rarity;
+    private String rarity;
 
     @Column(name = "position")
-    private Position position;
+    private String position;
 
     @ManyToOne
     @JoinColumn(name = "team_id")
     private Team team;
 
-    public Player(String firstName, String lastName, String image, Rarity rarity, Position position) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.image = image;
-        this.rarity = rarity;
-        this.position = position;
+    public Players() {
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -63,19 +67,19 @@ public class Player {
         this.image = image;
     }
 
-    public Rarity getRarity() {
+    public String getRarity() {
         return rarity;
     }
 
-    public void setRarity(Rarity rarity) {
+    public void setRarity(String rarity) {
         this.rarity = rarity;
     }
 
-    public Position getPosition() {
+    public String getPosition() {
         return position;
     }
 
-    public void setPosition(Position position) {
+    public void setPosition(String position) {
         this.position = position;
     }
 
