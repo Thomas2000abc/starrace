@@ -1,6 +1,6 @@
 package com.projet.starrace.controller;
 
-import com.projet.starrace.entity.Teams;
+import com.projet.starrace.entity.Team;
 import com.projet.starrace.service.TeamsService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

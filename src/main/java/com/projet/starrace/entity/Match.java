@@ -11,10 +11,10 @@ public class Match {
     private int id;
     @ManyToOne
     @JoinColumn(name = "home_team_id")
-    private Teams homeTeam;
+    private Team homeTeam;
     @ManyToOne
     @JoinColumn(name = "away_team_id")
-    private Teams awayTeam;
+    private Team awayTeam;
     @ManyToOne
     @JoinColumn(name = "tournament_id")
     private Tournaments tournamentId;
