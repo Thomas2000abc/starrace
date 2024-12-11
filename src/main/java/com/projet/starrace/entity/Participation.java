@@ -3,9 +3,10 @@ package com.projet.starrace.entity;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "participation")
 public class Participation {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_participation")
     private int id;
 
@@ -20,8 +21,12 @@ public class Participation {
     @JoinColumn(name = "teams_id")
     private Team team;
 
-    public Participation(int validity) {
-        this.validity = validity;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getValidity() {
@@ -32,19 +37,11 @@ public class Participation {
         this.validity = validity;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Tournaments getTournament() {
+    public Tournaments getTournaments() {
         return tournaments;
     }
 
-    public void setTournament(Tournaments tournaments) {
+    public void setTournaments(Tournaments tournaments) {
         this.tournaments = tournaments;
     }
 
