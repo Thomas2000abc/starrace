@@ -1,7 +1,5 @@
 package com.projet.starrace.entity;
 
-import com.projet.starrace.enumeration.Position;
-import com.projet.starrace.enumeration.Rarity;
 import jakarta.persistence.*;
 
 @Entity
@@ -18,8 +16,13 @@ public class Players {
     @Column(name = "player_last_name")
     private String lastName;
 
+    @Column(name = "player_paragraph")
+    private String paragraph;
+
     @Column(name = "player_image")
     private String image;
+    @Column(name = "player_card_image")
+    private String cardImage;
 
     @Column(name = "rarity")
     private String rarity;
@@ -31,16 +34,36 @@ public class Players {
     @JoinColumn(name = "team_id")
     private Team team;
 
+    /*
+    public Players(String firstName, String lastName, String paragraph, String image, String cardImage, Rarity rarity, Position position, Teams team) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.paragraph = paragraph;
+        this.image = image;
+        this.cardImage = cardImage;
+        this.rarity = rarity;
+        this.position = position;
+        this.team = team;
+    }
+
     public Players() {
+
+    }*/
+
+    public String getParagraph() {
+        return paragraph;
     }
 
-
-    public int getId() {
-        return id;
+    public void setParagraph(String paragraph) {
+        this.paragraph = paragraph;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getCardImage() {
+        return cardImage;
+    }
+
+    public void setCardImage(String cardImage) {
+        this.cardImage = cardImage;
     }
 
     public String getFirstName() {
@@ -89,5 +112,13 @@ public class Players {
 
     public void setTeam(Team team) {
         this.team = team;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
