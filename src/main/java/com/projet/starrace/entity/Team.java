@@ -17,24 +17,12 @@ public class Team {
     @Column(name="team_logo")
     private String teamLogo;
     private boolean validity;
+    @Column(name="team_order")
     private int order;
 
     @ManyToOne
     @JoinColumn(name="account_id")
     private Account accountId;
-
-    @OneToMany(mappedBy = "team")
-    private List<Participation> participations;
-
-    @OneToMany(mappedBy = "team")
-    private List<Players> players;
-
-    @OneToMany(mappedBy = "homeTeam")
-    private List<Match> homeTeams;
-
-    @OneToMany(mappedBy = "awayTeam")
-    private List<Match> awayTeams;
-
 
     public int getId() {
         return id;
