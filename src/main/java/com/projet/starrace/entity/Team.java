@@ -1,5 +1,6 @@
 package com.projet.starrace.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -17,12 +18,25 @@ public class Team {
     @Column(name="team_logo")
     private String teamLogo;
     private boolean validity;
-    @Column(name="team_order")
+
+    @Column(name ="team_order")
     private int order;
 
     @ManyToOne
     @JoinColumn(name="account_id")
-    private Account accountId;
+    private Account account;
+//    @OneToMany(mappedBy = "team")
+//    private List<Participation> participations;
+//
+//    @OneToMany(mappedBy = "team")
+//    private List<Players> players;
+//
+//    @OneToMany(mappedBy = "homeTeam")
+//    private List<Match> homeTeams;
+//
+//    @OneToMany(mappedBy = "awayTeam")
+//    private List<Match> awayTeams;
+
 
     public int getId() {
         return id;
@@ -30,6 +44,10 @@ public class Team {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
     }
 
     public String getTeamName() {
@@ -56,12 +74,12 @@ public class Team {
         this.validity = validity;
     }
 
-    public Account getAccountId() {
-        return accountId;
+    public Account getAccount() {
+        return account;
     }
 
-    public void setAccountId(Account accountId) {
-        this.accountId = accountId;
+    public void setAccountId(Account account) {
+        this.account = account;
     }
 
     public int getOrder() {

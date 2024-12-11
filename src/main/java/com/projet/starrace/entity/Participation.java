@@ -12,10 +12,9 @@ public class Participation {
     @Column(name = "validity")
     private int validity;
 
-
     @ManyToOne
     @JoinColumn(name = "tournament_id")
-    private Tournaments tournamentId;
+    private Tournaments tournaments;
 
     @ManyToOne
     @JoinColumn(name = "teams_id")
@@ -33,12 +32,20 @@ public class Participation {
         this.validity = validity;
     }
 
-    public Tournaments getTournament() {
-        return tournamentId;
+    public int getId() {
+        return id;
     }
 
-    public void setTournament(Tournaments tournament) {
-        this.tournamentId = tournament;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Tournaments getTournament() {
+        return tournaments;
+    }
+
+    public void setTournament(Tournaments tournaments) {
+        this.tournaments = tournaments;
     }
 
     public Team getTeam() {

@@ -1,5 +1,6 @@
 package com.projet.starrace.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -25,8 +26,7 @@ public class Account {
     private String password;
     @Column(name = "sign_in_date")
     private String signInDate;
-
-    @OneToMany(mappedBy = "accountId")
+    @OneToMany(mappedBy = "account")
     private List<Team> teams;
 
     public int getId() {
@@ -35,6 +35,10 @@ public class Account {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void setTeams(List<Team> teams) {
+        this.teams = teams;
     }
 
     public String getFirstName() {

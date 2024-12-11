@@ -23,11 +23,6 @@ public class Tournaments {
     private String tournamentDescription;
 
 
-    @OneToMany(mappedBy = "tournamentId")
-    private List<Participation> participations;
-    @OneToMany(mappedBy = "tournamentId")
-    private List<Match> matches;
-
     public int getId() {
         return id;
     }
