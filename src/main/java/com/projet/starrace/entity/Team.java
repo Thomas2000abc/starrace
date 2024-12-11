@@ -25,17 +25,17 @@ public class Team {
     @ManyToOne
     @JoinColumn(name="account_id")
     private Account account;
-    @OneToMany(mappedBy = "team")
-    private List<Participation> participations;
-
-    @OneToMany(mappedBy = "team")
-    private List<Players> players;
-
-    @OneToMany(mappedBy = "homeTeam")
-    private List<Match> homeTeams;
-
-    @OneToMany(mappedBy = "awayTeam")
-    private List<Match> awayTeams;
+//    @OneToMany(mappedBy = "team")
+//    private List<Participation> participations;
+//
+//    @OneToMany(mappedBy = "team")
+//    private List<Players> players;
+//
+//    @OneToMany(mappedBy = "homeTeam")
+//    private List<Match> homeTeams;
+//
+//    @OneToMany(mappedBy = "awayTeam")
+//    private List<Match> awayTeams;
 
 
     public int getId() {
@@ -48,26 +48,6 @@ public class Team {
 
     public void setAccount(Account account) {
         this.account = account;
-    }
-
-    public void setParticipations(List<Participation> participations) {
-        this.participations = participations;
-    }
-
-    public List<Players> getPlayers() {
-        return players;
-    }
-
-    public void setPlayers(List<Players> players) {
-        this.players = players;
-    }
-
-    public void setHomeTeams(List<Match> homeTeams) {
-        this.homeTeams = homeTeams;
-    }
-
-    public void setAwayTeams(List<Match> awayTeams) {
-        this.awayTeams = awayTeams;
     }
 
     public String getTeamName() {

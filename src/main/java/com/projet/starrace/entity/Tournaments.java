@@ -6,8 +6,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "tournaments")
-public class Tournament {
+public class Tournaments {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,16 +14,14 @@ public class Tournament {
     private int id;
     @Column(name="tournament_name")
     private String tournamentName;
+    @Enumerated(EnumType.STRING)
     @Column(name="tournament_type")
     private TournamentType tournamentType;
     @Column(name="tournament_code")
     private int tournamentCode;
     @Column(name="tournament_description")
     private String tournamentDescription;
-    @OneToMany(mappedBy = "tournament")
-    private List<Participation> participations;
-    @OneToMany(mappedBy = "tournament")
-    private List<Match> matches;
+
 
     public int getId() {
         return id;
@@ -32,22 +29,6 @@ public class Tournament {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public List<Participation> getParticipations() {
-        return participations;
-    }
-
-    public void setParticipations(List<Participation> participations) {
-        this.participations = participations;
-    }
-
-    public List<Match> getMatches() {
-        return matches;
-    }
-
-    public void setMatches(List<Match> matches) {
-        this.matches = matches;
     }
 
     public String getTournamentName() {

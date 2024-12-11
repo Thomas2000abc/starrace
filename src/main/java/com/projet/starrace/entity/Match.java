@@ -21,7 +21,7 @@ public class Match {
     private Team awayTeam;
     @ManyToOne
     @JoinColumn(name = "tournament_id")
-    private Tournament tournament;
+    private Tournaments tournaments;
 
     public int getId() {
         return id;
@@ -48,12 +48,12 @@ public class Match {
     }
 
 
-    public Tournament getTournament() {
-        return tournament;
+    public Tournaments getTournament() {
+        return tournaments;
     }
 
-    public void setTournament(Tournament tournament) {
-        this.tournament = tournament;
+    public void setTournament(Tournaments tournaments) {
+        this.tournaments = tournaments;
     }
 
     public int getHomeGoals() {

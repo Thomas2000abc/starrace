@@ -14,7 +14,7 @@ public class Participation {
 
     @ManyToOne
     @JoinColumn(name = "tournament_id")
-    private Tournament tournament;
+    private Tournaments tournaments;
 
     @ManyToOne
     @JoinColumn(name = "teams_id")
@@ -40,12 +40,12 @@ public class Participation {
         this.id = id;
     }
 
-    public Tournament getTournament() {
-        return tournament;
+    public Tournaments getTournament() {
+        return tournaments;
     }
 
-    public void setTournament(Tournament tournament) {
-        this.tournament = tournament;
+    public void setTournament(Tournaments tournaments) {
+        this.tournaments = tournaments;
     }
 
     public Team getTeam() {
