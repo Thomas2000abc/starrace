@@ -25,7 +25,7 @@ public class AccountController {
     }
 
     @ResponseStatus(value = HttpStatus.OK)
-    @GetMapping(path = "id/{id}", produces = APPLICATION_JSON_VALUE)
+    @GetMapping(path = "{id}", produces = APPLICATION_JSON_VALUE)
     public Account getById(@PathVariable int id) {
         return accountService.getById(id);
     }

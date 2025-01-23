@@ -28,7 +28,7 @@ public class ParticipationController {
     }
 
     @ResponseStatus(value = HttpStatus.OK)
-    @GetMapping(path = "id/{id}", produces = MimeTypeUtils.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "{id}", produces = MimeTypeUtils.APPLICATION_JSON_VALUE)
     public Participation getById(@PathVariable int id) {
         return participationService.getById(id);
     }

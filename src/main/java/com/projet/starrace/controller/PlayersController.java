@@ -30,7 +30,7 @@ public class PlayersController {
     }
 
     @ResponseStatus(value = HttpStatus.OK)
-    @GetMapping(path = "id/{id}", produces = MimeTypeUtils.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "{id}", produces = MimeTypeUtils.APPLICATION_JSON_VALUE)
     public Players getById(@PathVariable int id) {
         return playersService.getById(id);
     }

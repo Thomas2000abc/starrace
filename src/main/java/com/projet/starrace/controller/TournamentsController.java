@@ -26,7 +26,7 @@ public class TournamentsController {
     }
 
     @ResponseStatus(value = HttpStatus.OK)
-    @GetMapping(path = "id/{id}", produces = APPLICATION_JSON_VALUE)
+    @GetMapping(path = "{id}", produces = APPLICATION_JSON_VALUE)
     public Tournaments getById(@PathVariable int id) {
         return tournamentsService.getById(id);
     }
